@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="test" parallel="true">
+	<test name="test" preserver-order="true">
+		<classes>
+			<classname="TESTNG。TESTNGTEST" />
+		</classes>
+		<listeners>
+			<listenerclass-name =org.uncommons.reportng.HTMLReporter"/>
+			<listenerclass-name =org.uncommons.reportng.JUnitXMLReporter"/>
+		</listeners>
+	</test>
+</suite>
