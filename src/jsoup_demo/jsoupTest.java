@@ -26,8 +26,8 @@ public class jsoupTest {
 	}
 	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
-		//Document docweb = getUrl("http://yuedu.baidu.com/search", "%D4%C6%B2%E3");
-		//System.out.println(docweb);
+		Document docweb = getUrl("http://yuedu.baidu.com/search", "%D4%C6%B2%E3");
+		System.out.println(docweb);
 
 		System.out.println("=====================================");
 		Document webdoc = postUrl("http://ws.webxml.com.cn/WebServices/WeatherWS.asmx?op=getSupportCityString", "上海");
