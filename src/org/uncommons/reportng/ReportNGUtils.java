@@ -133,7 +133,7 @@ public class ReportNGUtils
 
 
     /**
-     * Retieves the output from all calls to {@link org.testng.Reporter#log(String)}
+     * Retieves the output from all calls to {@link Reporter#log(String)}
      * across all tests.
      * @return A (possibly empty) list of log messages.
      */
@@ -449,8 +449,6 @@ public class ReportNGUtils
         }
         throw new IllegalStateException("Could not find matching end time.");
     }
-
-
     public String formatPercentage(int numerator, int denominator)
     {
         return PERCENTAGE_FORMAT.format(numerator / (double) denominator);
@@ -458,10 +456,6 @@ public class ReportNGUtils
     public static String generateRandomImageName(){
     	String tag = "screenshot";
     	return System.currentTimeMillis() +NAME_SEPARATOR+tag+ EXTENSION;
-    }
-    public String removeImage(String s)
-    {
-        return  s.replaceAll("<img(.*?)/>","");
     }
     public String getImageString(String s)
     {
@@ -475,15 +469,10 @@ public class ReportNGUtils
         }
         return "";
     }
-    public boolean containsImg(String s) {
-		String regex = "(<img(.*?)/>)";
-		Pattern pattern = Pattern.compile(regex);
-		Matcher matcher = pattern.matcher(s);
-		while (matcher.find()) {
-			return true;
-		}
-		return false;
-	}
+    public String removeImage(String s)
+    {
+        return  s.replaceAll("<img(.*?)/>","");
+    }
     public static String storeImage(WebDriver driver,String baseDir){ 
 		String imageName = generateRandomImageName();
 		File srcFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
