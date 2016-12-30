@@ -11,7 +11,7 @@
       #set ($testInstanceName = " ($testResult.testName)")
     #end
     #if ($testResult.method.description && $testResult.method.description.length() > 0)
-      <span class="description" title="$testResult.method.description">$testResult.name$testInstanceName</span>
+      <span class="description" title="$testResult.method.description">$testResult.name$testInstanceName[$testResult.method.description]</span>
     #else
       $testResult.name$testInstanceName
     #end

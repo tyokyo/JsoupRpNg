@@ -2,6 +2,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="$messages.locale.language" lang="$messages.locale.language">
+<script src='http://www.ichartjs.com/ichart.latest.min.js'></script>
 <head>
   <title>$meta.reportTitle - $messages.getString("overview")</title>
   <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
@@ -12,6 +13,7 @@
   #end
 </head>
 <body>
+<div id='ichart-render'></div>
 <div id="meta">
   $messages.getString("generatedBy")
   $messages.getString("atTime") $meta.reportTime $messages.getString("onDate") $meta.reportDate
