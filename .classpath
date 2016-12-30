@@ -2,6 +2,15 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/J2SE-1.5"/>
-	<classpathentry kind="lib" path="lib/jsoup-1.8.1.jar"/>
+	<classpathentry kind="lib" path="lib/guice-3.0.jar"/>
+	<classpathentry kind="lib" path="lib/jcommander-1.48.jar"/>
+	<classpathentry kind="lib" path="lib/log4j.jar"/>
+	<classpathentry kind="lib" path="lib/saxon-8.7.jar"/>
+	<classpathentry kind="lib" path="lib/velocity-dep-1.4.jar" sourcepath="C:/Users/DELL/.m2/repository/velocity/velocity-dep/1.4/velocity-dep-1.4-sources.jar"/>
+	<classpathentry kind="lib" path="lib/testng-6.8.8.jar"/>
+	<classpathentry kind="lib" path="libs/selenium-server-standalone-3.0.0-beta3.jar"/>
+	<classpathentry kind="lib" path="lib/jsoup-1.9.2-javadoc.jar"/>
+	<classpathentry kind="lib" path="lib/jsoup-1.9.2-sources.jar"/>
+	<classpathentry kind="lib" path="lib/jsoup-1.9.2.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
