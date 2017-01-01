@@ -2,7 +2,14 @@
 ## methods in a single class for inclusion in the HTML report.  It assumes that the
 ## the results for the class are in a variable called $classResults.  $id is a page
 ## scope variable that is used to assign unique identifiers to divs.
-
+<script language="javascript">
+function bbimg(o){
+var zoom=parseInt(o.style.zoom, 10)||100;
+zoom+=event.wheelDelta/12;
+if (zoom>0) o.style.zoom=zoom+'%';
+return false;
+}
+</script>
 #foreach ($testResult in $classResults)
 <tr>
   <td class="method">

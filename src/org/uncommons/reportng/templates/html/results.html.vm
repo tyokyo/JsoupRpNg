@@ -11,6 +11,14 @@
   <link href="custom.css" rel="stylesheet" type="text/css" />
   #end
   <script type="text/javascript" src="reportng.js"></script>
+  <script language="javascript">
+  function bbimg(o){
+  var zoom=parseInt(o.style.zoom, 10)||100;
+  zoom+=event.wheelDelta/12;
+  if (zoom>0) o.style.zoom=zoom+'%';
+  return false;
+  }
+  </script>
 </head>
 <body>
 <h1>$result.testContext.name</h1>
