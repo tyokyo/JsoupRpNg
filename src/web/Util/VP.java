@@ -1,5 +1,16 @@
 package web.util;
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.testng.ITestResult;
+import org.testng.Reporter;
+import org.uncommons.reportng.Reporters;
+
+import java.io.File;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class VP extends TestBase {
 	//click By.id
@@ -50,7 +61,26 @@ public class VP extends TestBase {
 	public static void getElementByPartialLinkText(String linkText){
 		driver.findElement(By.partialLinkText(linkText));
 	}
-
+	public static void takeScreenShot(ITestResult tr) {
+		if (TestBase.driver!=null){
+			SimpleDateFormat formatter = new SimpleDateFormat("yyyy_MM_dd_HH_mm_ss");
+			String mDateTime = formatter.format(new Date());
+			File location = new File("test-output/screenshot");
+			String screenName = mDateTime+"_"+tr.getMethod().getMethodName()+".png";
+			String screenShotPath = location.getAbsolutePath()+File.separator+screenName;
+			File srcFile = ((TakesScreenshot)TestBase.driver).getScreenshotAs(OutputType.FILE);
+			try {
+				FileUtils.copyFile(srcFile, new File(screenShotPath));
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			Reporter.setCurrentTestResult(tr);
+			Reporters.logDebug(true,("<img src=../screenshot/" + screenName + ".png onmousewheel=\"return bbimg(this)\"  height='50' width='50'/>"));
+		}else {
+			Reporters.logDebug(true,"driver is NULL, screenshot Skipped");
+		}
+	}
 	public static void wait(int time){
 		try {
 			Thread.currentThread();
