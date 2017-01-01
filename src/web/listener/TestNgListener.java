@@ -1,21 +1,10 @@
 package web.listener;
 
-import org.apache.commons.io.FileUtils;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
 import org.testng.ITestContext;
 import org.testng.ITestResult;
-import org.testng.Reporter;
 import org.testng.TestListenerAdapter;
-import org.testng.log4testng.Logger;
 import org.uncommons.reportng.Reporters;
 
-import java.io.File;
-import java.io.IOException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
-import web.util.TestBase;
 import web.util.VP;
 
 public class TestNgListener extends TestListenerAdapter {
