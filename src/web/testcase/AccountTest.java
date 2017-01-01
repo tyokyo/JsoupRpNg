@@ -19,7 +19,7 @@ public class AccountTest extends VP{
 	}
 	@BeforeClass
 	public void beforeClass() {
-		driver = Browser.StartIE();
+
 	}
 
 	@AfterClass
