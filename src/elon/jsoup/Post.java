@@ -22,6 +22,7 @@ public class Post {
                 post();
         return document;
     }
+    //http://ws.webxml.com.cn/WebServices/WeatherWS.asmx/getSupportCityString?theRegionCode=sh
     public static void main(String args[]){
 
         Document document = null;
