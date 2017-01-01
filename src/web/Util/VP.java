@@ -1,4 +1,4 @@
-package web.Util;
+package web.util;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;

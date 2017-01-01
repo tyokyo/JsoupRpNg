@@ -1,4 +1,4 @@
-package web.Util;
+package web.util;
 
 import java.io.File;
 
