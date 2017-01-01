@@ -18,14 +18,14 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-import org.uncommons.reportng.ReportLogger;
+import org.uncommons.reportng.Reporters;
 
 public class MainTest2 {
 	@Test(description ="切尔西")
 	public void f1() {
-		ReportLogger.logDebug(true,"<img src='"+"../screenshot/1389967799784.png'  hight='100'  width='100'/><br>");
-		ReportLogger.logDebug(true,"InstrumentationInfo: [com.squareup.spoon.SpoonInstrumentationInfoInstrumentationInfo: [com.squareup.spoon.SpoonInstrumentationInfoInstrumentationInfo: [com.squareup.spoon.SpoonInstrumentationInfoInstrumentationInfo: [com.squareup.spoon.SpoonInstrumentationInfo");
-		ReportLogger.logDebug(true,"<img src='"+"../screenshot/1389967799784.png'  hight='100'  width='100'/><br>");
+		Reporters.logInfo("<img src='"+"../screenshot/1389967799784.png' onmousewheel=\"return bbimg(this)\"  hight='50'  width='50'/><br>");
+		Reporters.logInfo("InstrumentationInfo: [com.squareup.spoon.SpoonInstrumentationInfoInstrumentationInfo: [com.squareup.spoon.SpoonInstrumentationInfoInstrumentationInfo: [com.squareup.spoon.SpoonInstrumentationInfoInstrumentationInfo: [com.squareup.spoon.SpoonInstrumentationInfo");
+		Reporters.logInfo("<img src='"+"../screenshot/1389967799784.png'  hight='100'  width='100'/><br>");
 		//Reporter.log("<img src='"+"../screenshot/1389967799784.png'  hight='100'  width='100'/><br>");
 		System.out.println("test one");
 	}
