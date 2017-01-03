@@ -5,6 +5,8 @@
 		<classes>
 			<class name="ckt.app.android.MainTest" />
 			<class name="web.testcase.AccountTest" />
+			<class name="elon.jsoup.Get"/>
+			<class name="elon.jsoup.Post"/>
 		</classes>
 	</test>
 </suite>

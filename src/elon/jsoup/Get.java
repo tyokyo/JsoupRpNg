@@ -3,9 +3,9 @@ package elon.jsoup;
 import org.jsoup.Connection;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
+import org.testng.annotations.Test;
 
 import java.io.IOException;
-
 import control.ParseHelper;
 
 /**
@@ -20,7 +20,11 @@ public class Get extends ParseHelper {
         document = conn.get();
         return document;
     }
-
+    @Test(description ="测试百度搜索接口")
+    public void testGetBaiduSearch() throws IOException {
+        Document docweb = getUrl("http://yuedu.baidu.com/search", "%D4%C6%B2%E3");
+        System.out.println(docweb);
+    }
     public static void main(String[] args) throws IOException {
     	// TODO Auto-generated method stub
 		Document docweb = getUrl("http://yuedu.baidu.com/search", "%D4%C6%B2%E3");
