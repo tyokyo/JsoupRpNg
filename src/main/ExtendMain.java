@@ -1,9 +1,11 @@
-package org.uncommons.reportng;
+package main;
+
+import org.testng.TestNG;
+import org.uncommons.reportng.HTMLReporter;
+import org.uncommons.reportng.JUnitXMLReporter;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import org.testng.TestNG;
 
 import web.listener.TestNgListener;
 
