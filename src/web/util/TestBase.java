@@ -1,6 +1,7 @@
 package web.util;
 
 import java.io.File;
+import java.util.logging.Logger;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -10,20 +11,23 @@ import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 
 public class TestBase {
+	private static Logger logger=Logger.getLogger(TestBase.class.getName());
 	private static String configPath = "properties/config.properties";
+	private static  final String FIREFOX_BIN ="webdriver.firefox.bin";
 	private static String driverName;
+	private static String driver_firefox_bin;
+	private static String url;
 	public static WebDriver driver;
-	private static WebDriver StartFireFoxByDefault(){
-		System.out.println("start firefox browser...");
-		WebDriver driver = new FirefoxDriver();
-		return driver;
-	}
-	private static WebDriver StartFireFoxNotByDefault(){
-		System.out.println("start firefox browser...");
-		System.setProperty("webdriver.firefox.bin",
-				"C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe");
-		WebDriver driver = new FirefoxDriver();
-		System.out.println("start firefox browser succeed...");
+	private static WebDriver StartFireFox(){
+		//FireFox version 46.01-success
+		logger.info("Launch - Firefox ");
+		System.setProperty(FIREFOX_BIN, driver_firefox_bin);
+		System.setProperty("webdriver.gecko.driver","driver\\geckodriver_64.exe");
+		FirefoxProfile profile = new FirefoxProfile();
+		//For selenium 3.0
+		profile.setPreference("general.useragent.locale", "en-US");
+		profile.setPreference("intl.accept_languages", "en-US");
+		WebDriver driver = new FirefoxDriver(profile);
 		return driver;
 	}
 	private static void StartFireFoxByProxy(){
@@ -59,10 +63,10 @@ public class TestBase {
 		System.out.println("start firefox browser succeed...");
 	}
 	private static WebDriver StartChrome(){
-		System.out.println("start firefox browser...");
-		System.setProperty("webdriver.chrome.driver", "files\\chromedriver.exe");
+		//ChromeDriver v2.25 (2016-10-25)----------
+		//Supports Chrome v53-55
+		System.setProperty("webdriver.chrome.driver","driver/chromedriver.exe");
 		WebDriver driver = new ChromeDriver();
-		System.out.println("start firefox browser succeed...");
 		return driver;
 	}
 	private static void StartChromeLoadPlugin(){
@@ -77,32 +81,38 @@ public class TestBase {
 	}
 	public static WebDriver StartIE(){
 		System.out.println("start firefox browser...");
-		System.setProperty("webdriver.ie.driver", "driver\\IEDriverServer.exe");
+		System.setProperty("webdriver.ie.driver", "driver/IEDriverServer.exe");
 		WebDriver driver = new InternetExplorerDriver();
 		System.out.println("start firefox browser succeed...");
 		return driver;
 	}
 	static{
-		  driverName= Property.getValueByKey(configPath, "Driver");
+		driverName= Property.getValueByKey(configPath, "DRIVER");
+		driver_firefox_bin=Property.getValueByKey(configPath, "WEBDRIVER_FIREFOX_BIN");
+		url=Property.getValueByKey(configPath, "URL");
 	}
 	public static void stopDriver(){
+		logger.info("stopDriver");
 		if (driver!=null){
 			driver.quit();
 		}
 	}
 	public static  void startDriver() {
+		logger.info("startDriver");
 		switch(driverName) {
 			case "IE":
 				driver = StartIE();
 				break;
 			case "FireFox":
-				driver = StartIE();
+				driver = StartFireFox();
 				break;
 			case "Chrome":
-				driver = StartIE();
+				driver = StartChrome();
 				break;
 			default:
 				driver = StartIE();
 		}
+		driver.get(url);
+		driver.manage().window().maximize();
 	}
 }

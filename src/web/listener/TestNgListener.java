@@ -11,28 +11,28 @@ public class TestNgListener extends TestListenerAdapter {
 	@Override
 	public void onTestFailure(ITestResult tr) {
 		super.onTestFailure(tr);
-		Reporters.logInfo(tr.getName() + " Failure");
+		Reporters.logInfo("ITestResult-Failure");
 		VP.takeScreenShot(tr);
 	}
 
 	@Override
 	public void onTestSkipped(ITestResult tr) {
 		super.onTestSkipped(tr);
-		Reporters.logInfo(tr.getName() + " Skipped");
+		//Reporters.logInfo(tr.getName() + " Skipped");
 	}
 
 	@Override
 	public void onTestSuccess(ITestResult tr) {
 		super.onTestSuccess(tr);
 		//takeScreenShot(tr);
-		Reporters.logInfo(tr.getName() + " Success");
+		//Reporters.logInfo(tr.getName() + " Success");
 		//takeScreenShot(tr);
 	}
 
 	@Override
 	public void onTestStart(ITestResult tr) {
 		super.onTestStart(tr);
-		Reporters.logInfo(tr.getName() + " Start");
+		//Reporters.logInfo(tr.getName() + " Start");
 	}
 
 	@Override

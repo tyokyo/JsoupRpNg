@@ -11,8 +11,10 @@ import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.logging.Logger;
 
 public class VP extends TestBase {
+	private  static Logger logger = Logger.getLogger(VP.class.getName());
 	//click By.id
 	public static void clickById(String id){
 		driver.findElement(By.id(id)).clear();
@@ -62,20 +64,23 @@ public class VP extends TestBase {
 		driver.findElement(By.partialLinkText(linkText));
 	}
 	public static void takeScreenShot(ITestResult tr) {
+		logger.info("takeScreenShot-ITestResult-Fail");
 		if (TestBase.driver!=null){
-			SimpleDateFormat formatter = new SimpleDateFormat("yyyy_MM_dd_HH_mm_ss");
+			SimpleDateFormat formatter = new SimpleDateFormat("yyyyMMddHHmmss");
 			String mDateTime = formatter.format(new Date());
 			File location = new File("test-output/screenshot");
 			String screenName = mDateTime+"_"+tr.getMethod().getMethodName()+".png";
 			String screenShotPath = location.getAbsolutePath()+File.separator+screenName;
-			File srcFile = ((TakesScreenshot)TestBase.driver).getScreenshotAs(OutputType.FILE);
+			File srcFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 			try {
 				FileUtils.copyFile(srcFile, new File(screenShotPath));
+				logger.info(screenShotPath);
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			Reporter.setCurrentTestResult(tr);
+			//Reporters.logInfo("<img src=../screenshot/" + "1389967799784" + ".png onclick='window.open(\"../screenshot/"+"1"+".jpg\")' height='50' width='50'/>");
 			Reporters.logDebug(true,("<img src=../screenshot/" + screenName + ".png onmousewheel=\"return bbimg(this)\"  height='50' width='50'/>"));
 		}else {
 			Reporters.logDebug(true,"driver is NULL, screenshot Skipped");
