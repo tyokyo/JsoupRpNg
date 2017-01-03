@@ -36,14 +36,14 @@ public class MainTest2 {
 	}
 	@Test(description ="曼联")
 	public void f3() {
-		Reporter.log("<img src='"+"../screenshot/1389967799784.png'  hight='100'  width='100'/><br>");
+		//Reporter.log("<img src='"+"../screenshot/1389967799784.png'  hight='100'  width='100'/><br>");
 		System.out.println("test three");
-		Reporter.log("Testcase for this..<br>");
+		//Reporter.log("Testcase for this..<br>");
 		Assert.assertEquals(true, false);
 	}
 	@BeforeTest
 	public void beforeTest() {
-		Reporter.log("<img src='"+"../screenshot/1389967799784.png'  hight='100'  width='100'/><br>");
+		//Reporter.log("<img src='"+"../screenshot/1389967799784.png'  hight='100'  width='100'/><br>");
 	}
 
 	@AfterTest

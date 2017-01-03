@@ -4,6 +4,7 @@
 	<test verbose="2" preserve-order="true" name="testng_demo1">
 		<classes>
 			<class name="ckt.app.android.MainTest" />
+			<class name="web.testcase.AccountTest" />
 		</classes>
 	</test>
 </suite>

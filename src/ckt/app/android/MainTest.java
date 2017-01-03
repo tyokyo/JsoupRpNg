@@ -9,13 +9,13 @@ import org.uncommons.reportng.Reporters;
 
 public class MainTest{
 	@Test(description ="test one")
-	public void af() {
+	public void test01() {
 		System.out.println("test one");
 		Reporters.logInfo("<img src=../screenshot/" + "1389967799784" + ".png onclick='window.open(\"../screenshot/"+"1389967799784"+".png\")' height='50' width='50'/>");
 		Reporters.logInfo("<img src='"+"../screenshot/1389967799784.png'  hight='100'  width='100'/><br>");
 	}
 	@Test(description ="test two")
-	public void cf2() {
+	public void test02() {
 		System.out.println("test two");
 	}
 	@Test(description ="test three")
@@ -24,7 +24,7 @@ public class MainTest{
 		Assert.assertEquals(true, false);
 	}
 	@Test(description ="test four")
-	public void bf4() {
+	public void test03() {
 		Reporters.logInfo("<img src='"+"../screenshot/1389967799784.png'  hight='100'  width='100'/><br>");
 		System.out.println("test four");
 		Assert.assertEquals(true, true);
