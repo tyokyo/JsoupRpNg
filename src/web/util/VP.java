@@ -66,7 +66,7 @@ public class VP extends TestBase {
 	public static void takeScreenShot(ITestResult tr) {
 		logger.info("takeScreenShot-ITestResult-Fail");
 		if (TestBase.driver!=null){
-			SimpleDateFormat formatter = new SimpleDateFormat("yyyy_MM_dd_HH_mm_ss");
+			SimpleDateFormat formatter = new SimpleDateFormat("yyyyMMddHHmmss");
 			String mDateTime = formatter.format(new Date());
 			File location = new File("test-output/screenshot");
 			String screenName = mDateTime+"_"+tr.getMethod().getMethodName()+".png";
@@ -81,7 +81,7 @@ public class VP extends TestBase {
 			}
 			Reporter.setCurrentTestResult(tr);
 			//Reporters.logInfo("<img src=../screenshot/" + "1389967799784" + ".png onclick='window.open(\"../screenshot/"+"1"+".jpg\")' height='50' width='50'/>");
-			Reporters.logDebug(true,("<img src=../screenshot/" + 1 + ".jpg onmousewheel=\"return bbimg(this)\"  height='50' width='50'/>"));
+			Reporters.logDebug(true,("<img src=../screenshot/" + screenName + ".png onmousewheel=\"return bbimg(this)\"  height='50' width='50'/>"));
 		}else {
 			Reporters.logDebug(true,"driver is NULL, screenshot Skipped");
 		}
