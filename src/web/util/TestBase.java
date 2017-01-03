@@ -19,6 +19,7 @@ public class TestBase {
 	private static String url;
 	public static WebDriver driver;
 	private static WebDriver StartFireFox(){
+		//FireFox version 46.01-success
 		logger.info("Launch - Firefox ");
 		System.setProperty(FIREFOX_BIN, driver_firefox_bin);
 		System.setProperty("webdriver.gecko.driver","driver\\geckodriver_64.exe");
@@ -80,7 +81,7 @@ public class TestBase {
 	}
 	public static WebDriver StartIE(){
 		System.out.println("start firefox browser...");
-		System.setProperty("webdriver.ie.driver", "driver\\IEDriverServer.exe");
+		System.setProperty("webdriver.ie.driver", "driver/IEDriverServer.exe");
 		WebDriver driver = new InternetExplorerDriver();
 		System.out.println("start firefox browser succeed...");
 		return driver;
