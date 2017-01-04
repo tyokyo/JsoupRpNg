@@ -31,7 +31,6 @@ public class Discovery extends VP{
 	}
 	//检查Top broadcasts
 	public void Topbroadcasts(){
-
 		//点击next
 		WebElement next = driver.findElement(By.className("next"));
 		Actions  builder=new Actions(driver);

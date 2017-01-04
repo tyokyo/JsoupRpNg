@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Suite001" parallel="classes" thread-count="3">
+	<!--<listeners>
+		<listener class-name="web.listener.TestNgListener" />
+	</listeners>-->
 	<test verbose="2" preserve-order="true" name="testng_demo1">
 		<classes>
 			<class name="ckt.app.android.MainTest" />
+			<class name="web.testcase.Discovery" />
 			<class name="web.testcase.AccountTest" />
 			<class name="elon.jsoup.Get"/>
 			<class name="elon.jsoup.Post"/>
