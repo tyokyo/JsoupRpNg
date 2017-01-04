@@ -80,8 +80,8 @@ public class VP extends TestBase {
 				e.printStackTrace();
 			}
 			Reporter.setCurrentTestResult(tr);
-			//Reporters.logInfo("<img src=../screenshot/" + "1389967799784" + ".png onclick='window.open(\"../screenshot/"+"1"+".jpg\")' height='50' width='50'/>");
-			Reporters.logDebug(true,("<img src=../screenshot/" + screenName + ".png onmousewheel=\"return bbimg(this)\"  height='50' width='50'/>"));
+			//Reporters.logDebug(true,"<img src=../screenshot/" + screenName + " onclick='window.open(\"../screenshot/"+screenName+"\")' height='50' width='50'/>");
+			Reporters.logDebug(true,("<img src=../screenshot/" + screenName + " onmousewheel=\"return bbimg(this)\""+ " onclick='window.open(\"../screenshot/"+screenName + "\")\' height='50' width='50'/>"));
 		}else {
 			Reporters.logDebug(true,"driver is NULL, screenshot Skipped");
 		}
