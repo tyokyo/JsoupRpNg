@@ -15,6 +15,7 @@ import java.util.logging.Logger;
 
 public class VP extends TestBase {
 	private  static Logger logger = Logger.getLogger(VP.class.getName());
+	private static String SEPERATE="/";
 	//click By.id
 	public static void clickById(String id){
 		driver.findElement(By.id(id)).clear();
@@ -69,8 +70,8 @@ public class VP extends TestBase {
 			SimpleDateFormat formatter = new SimpleDateFormat("yyyyMMddHHmmss");
 			String mDateTime = formatter.format(new Date());
 			File location = new File("test-output/screenshot");
-			String screenName = mDateTime+"_"+tr.getMethod().getMethodName()+".png";
-			String screenShotPath = location.getAbsolutePath()+File.separator+screenName;
+			String screenName = tr.getTestClass().getName()+SEPERATE+tr.getMethod().getMethodName()+SEPERATE+mDateTime+".png";
+			String screenShotPath = location.getAbsolutePath()+SEPERATE+screenName;
 			File srcFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 			try {
 				FileUtils.copyFile(srcFile, new File(screenShotPath));
