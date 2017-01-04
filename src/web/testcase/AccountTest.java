@@ -12,6 +12,7 @@ import org.testng.Assert;
 import org.testng.TestNG;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import org.testng.annotations.BeforeClass;
 import org.openqa.selenium.WebDriver.Navigation;
@@ -19,6 +20,7 @@ import org.testng.annotations.AfterClass;
 
 import web.base.Constant;
 import web.util.VP;
+//@Listeners({web.listener.TestNgListener.class})
 public class AccountTest extends VP{
 	@Test
 	public void LoginManagementAccount() {
