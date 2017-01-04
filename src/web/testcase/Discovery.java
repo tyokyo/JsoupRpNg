@@ -14,27 +14,20 @@ import org.testng.annotations.Test;
 
 import java.util.List;
 
+import web.util.VP;
+
 //import org.openqa.selenium.firefox.FirefoxProfile;
 
 @Test
-public class Discovery {
-	public WebDriver driver;
+public class Discovery extends VP{
 	String baseUrl = "http://10.120.1.39/";
 	@BeforeMethod
 	public void BeforeMethod(){
-		System.setProperty("webdriver.firefox.bin", "C:\\Program Files (x86)\\Firefox\\firefox.exe");
-		driver = new FirefoxDriver();
-		driver.get(baseUrl);
-		try {
-			Thread.sleep(2000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		startDriver();
 	}
 	@AfterMethod
 	public void AfterMethod(){
-		driver.quit();
+		stopDriver();
 	}
 	//检查Top broadcasts
 	public void Topbroadcasts(){
@@ -42,6 +35,7 @@ public class Discovery {
 		//点击next
 		WebElement next = driver.findElement(By.className("next"));
 		Actions  builder=new Actions(driver);
+
 		builder.doubleClick(next).build().perform();
 		try {
 			Thread.sleep(2000);
