@@ -65,8 +65,9 @@ public class VP extends TestBase {
 		driver.findElement(By.partialLinkText(linkText));
 	}
 	public static void takeScreenShot(ITestResult tr) {
-		logger.info("takeScreenShot-ITestResult-Fail");
 		if (TestBase.driver!=null){
+			logger.info("takeScreenShot-ITestResult-Fail");
+			logger.info(tr.getTestClass().getName()+SEPERATE+tr.getMethod().getMethodName());
 			SimpleDateFormat formatter = new SimpleDateFormat("yyyyMMddHHmmss");
 			String mDateTime = formatter.format(new Date());
 			File location = new File("test-output/screenshot");
