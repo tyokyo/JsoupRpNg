@@ -1,14 +1,14 @@
 package web.util;
 
-import java.io.File;
-import java.util.logging.Logger;
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.ie.InternetExplorerDriver;
+
+import java.io.File;
+import java.util.logging.Logger;
 
 public class TestBase {
 	private static Logger logger=Logger.getLogger(TestBase.class.getName());
