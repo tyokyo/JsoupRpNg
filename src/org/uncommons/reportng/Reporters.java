@@ -35,7 +35,7 @@ public class Reporters {
     if (stackTrace == null || stackTrace.length < 4) return "[BOGUS]";
     String className = stackTrace[3].getClassName();
     String methodName = stackTrace[3].getMethodName();
-    //className = className.replaceAll("[a-z\\.]", "");
+    className = className.replaceAll("[a-z\\.]", "");
     String timestamp = DATE_FORMAT.get().format(new Date());
     return String.format("%s [%s.%s] ", timestamp, className, methodName);
   }
