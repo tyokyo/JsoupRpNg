@@ -10,7 +10,7 @@ import java.util.List;
 
 import web.listener.TestNgListener;
 
-public class ExtendMain {
+public class ExecuteRunner{
 	private static final String ESCAPE_PROPERTY = "org.uncommons.reportng.escape-output";
 	public static void main(String[] args) {
 		//强制显示图片
@@ -19,7 +19,7 @@ public class ExtendMain {
 		testNG.setUseDefaultListeners(false);
 		testNG.addListener(new HTMLReporter());
 		testNG.addListener(new JUnitXMLReporter());
-		//自定义监听器
+		//自定义监听器-失败截图
 		testNG.addListener(new TestNgListener());
 		List<String> suits = new ArrayList<String>();
 		//添加测试套件-读取XML文件夹下所有的.xml文件（testng 配置文件）
