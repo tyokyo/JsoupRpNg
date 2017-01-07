@@ -1,0 +1,13 @@
+<!DOCTYPE suite SYSTEM "http://beust.com/testng/testng-1.0.dtd" >
+<suite name="TestNGSample">
+	<listeners>
+		<listener class-name="elon.testng.sample.d01.listeners.OSFilter" />
+		<listener class-name="elon.testng.sample.d01.listeners.ProgressTracker" />
+	</listeners>
+	<test name="ProgressTracker Demo">
+		<classes>
+			<class name="elon.testng.sample.d01.tests.SampleTest" />
+		</classes>
+	</test>
+</suite>
+	<!--http://www.ibm.com/developerworks/cn/opensource/os-cn-testinglistener/index.html-->

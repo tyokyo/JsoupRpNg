@@ -1,4 +1,4 @@
-package web.arrow;
+package elon.testng.arrow;
 
 import com.thoughtworks.qdox.JavaDocBuilder;
 import com.thoughtworks.qdox.model.DocletTag;
@@ -37,7 +37,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import web.arrow.utils.ConfigReader;
+import elon.testng.arrow.utils.ConfigReader;
 
 /**
  * Reported designed to render self-contained HTML top down view of a testing

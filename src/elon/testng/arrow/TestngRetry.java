@@ -1,11 +1,11 @@
-package web.arrow;
+package elon.testng.arrow;
 
 import org.apache.log4j.Logger;
 import org.testng.IRetryAnalyzer;
 import org.testng.ITestResult;
 import org.testng.Reporter;
 
-import web.arrow.utils.ConfigReader;
+import elon.testng.arrow.utils.ConfigReader;
 
 /**
  * TestNG retry Analyzer.
